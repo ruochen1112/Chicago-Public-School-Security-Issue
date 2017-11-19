@@ -1,0 +1,76 @@
+
+div#title {	width: 1050px;
+	        margin: 10px auto 0;
+			padding: 10px 20px;
+		}
+
+.subtitle {	width: 1200px;
+	        margin: 10px auto 0;
+		}
+
+
+h1 {
+	font-family: Georgia, serif;
+	font-size: 1.4em;
+	letter-spacing: 1px;
+	margin: 0 auto;
+			}
+h2 {
+	font-size: .8em;
+	font-weight:100;
+	margin: .3em auto;
+			}
+
+svg {
+  background-color: white;
+}
+.axis--x path {
+  display: none;
+}
+
+.axis--y path {
+  display: none;
+}
+.bar.high {
+  fill: #a73540; 
+}
+
+.bar.low {
+  fill: #abc6c3;
+}
+
+.textbar{font-family: sans-serif;
+	 font-size: .6em;
+fill: white;
+
+
+}
+
+.dotone {fill: #a73540;}
+.dottwo {fill: #abc6c3;}
+
+.lableText{
+	font-family: serif;
+	font-style: italic;
+	font-size: .8em;
+	font-weight:100;
+}
+
+
+.legendText {
+	font-family: serif;
+
+	font-size: .75em;
+	font-weight:100;
+}
+
+
+
+
+p {font-family: serif;
+	font-style: italic;
+	font-size: .8em;
+	font-weight:100;
+     width: 1250px;
+	 margin: 10px auto 0;}
+
