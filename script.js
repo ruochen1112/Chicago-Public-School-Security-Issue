@@ -1,9 +1,9 @@
 
 
 
-var margin = {top: 30, right: 20, bottom: 50, left: 30}
+var margin = {top: 30, right: 20, bottom: 57, left: 30}
 var width = 1000;
-var height = 400;
+var height = 600;
 
 
 
@@ -94,7 +94,7 @@ var yellowIcon = new L.Icon({
 
 var greyIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
-  shadowUrl: 'ihttps://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -124,7 +124,7 @@ function creatbar() {
 
 var svg = d3.select("#bar").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("height", height - margin.top - margin.bottom*10)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
