@@ -56,7 +56,7 @@ function creatmap() {
             .style("stroke", "#b0d8da")  
             .style("opacity", .6) 
             .style("fill", "#0a406e")
-            .attr("r", 15);  
+            .attr("r", 15);
         
     map.on("viewreset", update);
         update();
@@ -73,20 +73,37 @@ function creatmap() {
 });
 
 //attempt of another marker 
-  var blueIcon = new L.Icon({
-  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+var yellowIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
+});
 
+  var orangeIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
 });
 
 
-  L.marker([41.89,-87.76], {icon: blueIcon}).addTo(map); 
-  L.marker([41.93,-87.75], {icon: blueIcon}).addTo(map); 
-  L.marker([41.7,-87.7], {icon: blueIcon}).addTo(map);
+var greyIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+  shadowUrl: 'ihttps://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+  L.marker([41.87859028,-87.66419634], {icon: orangeIcon}).addTo(map).bindPopup("Name:Whitney M Young Magnet High School <br/>Level:1 <br/> Gang Activeties:24"); 
+  L.marker([41.92003613,-87.76108432], {icon: yellowIcon}).addTo(map).bindPopup("Name:Prosser Career Academy High School<br/>Level:2 <br/> Gang Activeties:592");
+  L.marker([41.88520477,-87.76321191], {icon: greyIcon}).addTo(map).bindPopup("Name:Austin Polytechnical Academy High School<br/>Level:1156 <br/> Gang Activeties:592");;
 
   
 
