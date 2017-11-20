@@ -24,6 +24,10 @@ h2 {
 svg {
   background-color: white;
 }
+
+
+
+
 .axis--x path {
   display: none;
 }
@@ -46,8 +50,7 @@ fill: white;
 
 }
 
-.dotone {fill: #a73540;}
-.dottwo {fill: #abc6c3;}
+
 
 .lableText{
 	font-family: serif;
@@ -69,8 +72,8 @@ fill: white;
 
 p {font-family: serif;
 	font-style: italic;
-	font-size: .8em;
+	font-size: .6em;
 	font-weight:100;
      width: 1250px;
-	 margin: 10px auto 0;}
+	 }
 

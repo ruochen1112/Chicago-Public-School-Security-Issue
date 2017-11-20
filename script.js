@@ -21,7 +21,7 @@ var height = 400;
 function creatmap() {
 
 
-    var map = L.map('map').setView([41.88, -87.63], 10);
+    var map = L.map('map').setView([41.88, -87.63], 12);
         mapLink = 
             '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
@@ -34,7 +34,7 @@ function creatmap() {
   
 
     var svg = d3.select("#map")
-    .append("svg")
+    .select("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
@@ -52,10 +52,10 @@ function creatmap() {
     var feature = g.selectAll("circle")
             .data(collection.objects)
             .enter().append("circle")
-            .style("stroke", "black")  
+            .style("stroke", "#b0d8da")  
             .style("opacity", .6) 
-            .style("fill", "blue")
-            .attr("r", 20);  
+            .style("fill", "#0a406e")
+            .attr("r", 15);  
         
     map.on("viewreset", update);
         update();
@@ -71,7 +71,7 @@ function creatmap() {
         }          
 });
 
-
+//attempt of another marker 
   var blueIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
