@@ -30,7 +30,7 @@ function creatmap() {
             maxZoom: 18,
             }).addTo(map);
 
-        map._initPathRoot()  
+    map._initPathRoot()  
   
 
     var svg = d3.select("#map")
@@ -133,8 +133,6 @@ function onchange() {
     .append('p')
     .text(selectValue + ' bar chart is on the way.')
 
-select.exit()
-  .remove();
 
 
 
