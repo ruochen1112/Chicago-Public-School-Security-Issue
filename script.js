@@ -37,7 +37,7 @@ function creatmap() {
     var svg = d3.select("#map")
     .select("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom);
+    .attr("height", height + margin.top + margin.bottom*2);
 
 
     var g = svg.append('g')
@@ -53,10 +53,10 @@ function creatmap() {
     var feature = g.selectAll("circle")
             .data(collection.objects)
             .enter().append("circle")
-            .style("stroke", "#b0d8da")  
-            .style("opacity", .6) 
-            .style("fill", "#0a406e")
-            .attr("r", 15);
+            .style("stroke", "#fffeb3")  
+            .style("opacity", .7) 
+            .style("fill", "666547")
+            .attr("r", 10);
         
     map.on("viewreset", update);
         update();
@@ -103,7 +103,7 @@ var greyIcon = new L.Icon({
 
   L.marker([41.87859028,-87.66419634], {icon: orangeIcon}).addTo(map).bindPopup("Name:Whitney M Young Magnet High School <br/>Level:1 <br/> Gang Activeties:24"); 
   L.marker([41.92003613,-87.76108432], {icon: yellowIcon}).addTo(map).bindPopup("Name:Prosser Career Academy High School<br/>Level:2 <br/> Gang Activeties:592");
-  L.marker([41.88520477,-87.76321191], {icon: greyIcon}).addTo(map).bindPopup("Name:Austin Polytechnical Academy High School<br/>Level:1156 <br/> Gang Activeties:592");;
+  L.marker([41.88520477,-87.76321191], {icon: greyIcon}).addTo(map).bindPopup("Name:Austin Polytechnical Academy High School<br/>Level:3 <br/> Gang Activeties:1156");;
 
 
 };
