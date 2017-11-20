@@ -53,9 +53,7 @@ function creatmap() {
     var feature = g.selectAll("circle")
             .data(collection.objects)
             .enter().append("circle")
-            .style("stroke", "#fffeb3")  
-            .style("opacity", .7) 
-            .style("fill", "666547")
+            .attr("class","circle")
             .attr("r", 10);
         
     map.on("viewreset", update);
@@ -71,6 +69,10 @@ function creatmap() {
             )
         }          
 });
+
+    //.style("stroke", "#fffeb3")  
+           // .style("opacity", .7) 
+            //.style("fill", "666547")
 
 //attempt of another marker 
 var yellowIcon = new L.Icon({
@@ -141,7 +143,7 @@ var options = select
 function onchange() {
     selectValue = d3.select('select').property('value')
     d3.select('#bar')
-    .append('p')
+    .append('h2')
     .text(selectValue + ' bar chart is on the way.')
 
 

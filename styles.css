@@ -10,11 +10,11 @@ h2 {
 	font-weight:100;
 	margin: .3em auto;
 			}
+.circle { stroke:#fffeb3; 
+           opacity:.8;
+           fill:#666547;}
 
-svg {
-  background-color: white;
-
-}
+.circle:hover{fill:#ae0001;}
 
 
 p {font-family: serif;
