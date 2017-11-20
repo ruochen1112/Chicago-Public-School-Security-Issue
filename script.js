@@ -24,9 +24,9 @@ function creatmap() {
 
     var map = L.map('map').setView([41.88, -87.63], 12);
         mapLink = 
-            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+            '<a href="https://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
-            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink + ' Contributors',
             maxZoom: 18,
             }).addTo(map);
@@ -105,10 +105,6 @@ var greyIcon = new L.Icon({
   L.marker([41.92003613,-87.76108432], {icon: yellowIcon}).addTo(map).bindPopup("Name:Prosser Career Academy High School<br/>Level:2 <br/> Gang Activeties:592");
   L.marker([41.88520477,-87.76321191], {icon: greyIcon}).addTo(map).bindPopup("Name:Austin Polytechnical Academy High School<br/>Level:1156 <br/> Gang Activeties:592");;
 
-  
-
-
-
 
 };
 
@@ -116,10 +112,7 @@ var greyIcon = new L.Icon({
 
 
 
-                    
-
-
-
+                  
 function creatbar() {
 
 var svg = d3.select("#bar").append("svg")
