@@ -11,11 +11,12 @@ var height = 400;
    creatmap();
 
 
-  d3.json("gang.json", function(error,data) {
+  d3.json("test_gang.json", function(error,data) {
         gang = data;
-          creatbar();
+        
+        creatbar();
 });
-
+  
 
 
 function creatmap() {
