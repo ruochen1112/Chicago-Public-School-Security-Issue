@@ -7,7 +7,7 @@ var height = 400;
 
 
 
- d3.json("data.json", function(error,data) {
+ d3.json("data1.json", function(error,data) {
         dataset = data;
     
 
@@ -36,7 +36,9 @@ function creatmap() {
             maxZoom: 18,
             }).addTo(map);
 
-        map._initPathRoot()    
+        map._initPathRoot()  
+
+         
 
     var svg = d3.select("#map")
     .append("svg")
@@ -46,12 +48,21 @@ function creatmap() {
     var g = svg.append('g')
     .attr("transform", "translate(" + margin.left*2 + "," + margin.top*2 + ")");
 
-    var points = selectAll("circle")
-        .data(dataset.Location)
-        .enter().append("svg:circle")
-        .attr("r", 10)
-        .attr("cx", function(d){return map(d.geometry.coordinates)[0];})
-        .attr("cy", function(d){return map(d.geometry.coordinates)[1];})
+
+  var blueIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+
+});
+
+
+  L.marker([41.89037849,-87.76763207], {icon: blueIcon}).addTo(map); 
+
+  L.marker([dataset.Latitude,dataset.Longitude], {icon: blueIcon}).addTo(map); 
 
 
 
@@ -76,11 +87,39 @@ var svg = d3.select("#bar").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-  var g = svg.append('g')
+var g = svg.append('g')
     .attr("transform", "translate(" + margin.left*2 + "," + margin.top*2 + ")");
+
+var select = d3.select('#bar')
+  .append('select')
+    .attr('class','select')
+    .on('change',onchange)
+
+
+
+var options = select
+  .selectAll('option')
+    .data(gang).enter()
+    .append('option')
+    .text(function (d) { return d.School_Name; });
+
+function onchange() {
+    selectValue = d3.select('select').property('value')
+    d3.select('#bar')
+    .append('p')
+    .text(selectValue + ' bar chart is on the way.')
+
+select.exit()
+  .remove();
+
+
 
 };
 
+};
+
+
+ 
 
 
                     
