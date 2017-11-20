@@ -7,15 +7,9 @@ var height = 400;
 
 
 
- d3.json("data1.json", function(error,data) {
-        dataset = data;
-    
 
-    creatmap();
+   creatmap();
 
-   
-
-});
 
   d3.json("gang.json", function(error,data) {
         gang = data;
@@ -27,7 +21,7 @@ var height = 400;
 function creatmap() {
 
 
-    var map = L.map('map').setView([41.88, -87.63], 12);
+    var map = L.map('map').setView([41.88, -87.63], 10);
         mapLink = 
             '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
@@ -37,16 +31,45 @@ function creatmap() {
             }).addTo(map);
 
         map._initPathRoot()  
-
-         
+  
 
     var svg = d3.select("#map")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
+
     var g = svg.append('g')
     .attr("transform", "translate(" + margin.left*2 + "," + margin.top*2 + ")");
+
+    d3.json("test.json", function(collection) {
+        collection.objects.forEach(function(d) {
+            d.LatLng = new L.LatLng(d.circle.coordinates[0],
+                                    d.circle.coordinates[1])
+        })  
+ 
+
+    var feature = g.selectAll("circle")
+            .data(collection.objects)
+            .enter().append("circle")
+            .style("stroke", "black")  
+            .style("opacity", .6) 
+            .style("fill", "blue")
+            .attr("r", 20);  
+        
+    map.on("viewreset", update);
+        update();
+
+    function update() {
+        feature.attr("transform", 
+        function(d) { 
+            return "translate("+ 
+                map.latLngToLayerPoint(d.LatLng).x +","+ 
+                map.latLngToLayerPoint(d.LatLng).y +")";
+                }
+            )
+        }          
+});
 
 
   var blueIcon = new L.Icon({
@@ -60,16 +83,17 @@ function creatmap() {
 });
 
 
-  L.marker([41.89037849,-87.76763207], {icon: blueIcon}).addTo(map); 
+  L.marker([41.89,-87.76], {icon: blueIcon}).addTo(map); 
+  L.marker([41.93,-87.75], {icon: blueIcon}).addTo(map); 
+  L.marker([41.7,-87.7], {icon: blueIcon}).addTo(map);
 
-  L.marker([dataset.Latitude,dataset.Longitude], {icon: blueIcon}).addTo(map); 
-
-
-
-
+  
 
 
-    };
+
+
+};
+
 
 
 
