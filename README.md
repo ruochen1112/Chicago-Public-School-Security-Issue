@@ -1,4 +1,4 @@
-The **gang.json** and **geodata.json** are the full dataset for two plots. The two test data are just for test view.
+The **gang.json** and **geodata.json** are the full dataset for two plots. Those three test data are just for test view.
 
 
 

@@ -16,6 +16,25 @@ h2 {
 
 .circle:hover{fill:#ae0001;}
 
+.axis--x path {
+  display: none;
+}
+
+.axis--y path {
+  display: none;
+}
+
+.bar {fill: #abc6c3}
+.bar:hover{fill:#ae0001;}
+
+.lableText {
+	font-family: sans-serif;
+
+	font-size: .8em;
+	font-weight:100;
+}
+
+
 
 p {font-family: serif;
 	font-style: italic;

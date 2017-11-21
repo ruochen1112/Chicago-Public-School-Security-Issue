@@ -2,8 +2,8 @@
 
 
 var margin = {top: 30, right: 20, bottom: 57, left: 30}
-var width = 1000;
-var height = 600;
+var width = 900;
+var height = 350;
 
 
 
@@ -11,11 +11,16 @@ var height = 600;
    creatmap();
 
 
+
+
+
   d3.json("test_gang.json", function(error,data) {
         gang = data;
         
-        creatbar();
+       dropdownmenu();
 });
+
+
   
 
 
@@ -70,9 +75,6 @@ function creatmap() {
         }          
 });
 
-    //.style("stroke", "#fffeb3")  
-           // .style("opacity", .7) 
-            //.style("fill", "666547")
 
 //attempt of another marker 
 var yellowIcon = new L.Icon({
@@ -115,20 +117,14 @@ var greyIcon = new L.Icon({
 
 
                   
-function creatbar() {
+function dropdownmenu() {
 
-var svg = d3.select("#bar").append("svg")
+var svg = d3.select("#menu").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height - margin.top - margin.bottom*10)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("height", 5);
 
-
-var g = svg.append('g')
-    .attr("transform", "translate(" + margin.left*2 + "," + margin.top*2 + ")");
-
-var select = d3.select('#bar')
-  .append('select')
+var select = d3.select('#menu')
+    .append('select')
     .attr('class','select')
     .on('change',onchange)
 
@@ -142,16 +138,103 @@ var options = select
 
 function onchange() {
     selectValue = d3.select('select').property('value')
-    d3.select('#bar')
+    d3.select('#menu')
     .append('h2')
     .text(selectValue + ' bar chart is on the way.')
 
+};
+
+
+
+ 
+  d3.json("test_gang_chart.json", function(error,data) {
+        dataset = data;
+        
+          creatbar();
+        
+      
+  });
+
+ function  creatbar() {
+
+    var svg = d3.select("#bar")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom*6);
+
+  var g = svg.append('g')
+    .attr("transform", "translate(" + margin.left*2 + "," + margin.top*7 + ")")
+
+
+    var xScale = d3.scaleBand()
+    .domain(dataset.map(function(d) { return d.Gang_Name; }))
+    .rangeRound([0, width])
+    .padding(0.1);
+
+    var yScale = d3.scaleLinear()
+    .domain([0,d3.max(dataset, function(d) { return d.TOTAL; })])
+    .rangeRound([0,height])
+
+ 
+
+    g.append("g")
+      .attr("class", "axis axis--x")
+      .call(d3.axisTop(xScale))
+      .selectAll("text")  
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", function(d) {
+                return "rotate(65)" 
+                });
+
+    g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(yScale));
+
+
+  g.selectAll(".bar")
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return xScale(d.Gang_Name); })
+    .attr("y", 0)
+    .attr("width", xScale.bandwidth())
+    .attr("height", function(d) { return yScale(d.TOTAL); })
+
+
+
+    g.append("text")
+    .attr("class", "lableText")
+    .attr("dx", "28em")
+    .attr("dy", "-10em")            
+    .style("text-anchor", "middle")
+    .text("Active Gangs");
+
+    g.append("text")
+    .attr("class", "lableText")
+    .attr("transform", "rotate(-90)")
+    .style("text-anchor", "middle")
+    .attr("dx", "-10em")
+    .attr("dy", "-2.5em")
+    .text("Counts");
+
+  
+
 
 
 
 };
 
+
 };
+
+
+
+
+
+
 
 
  
