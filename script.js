@@ -10,14 +10,13 @@ var height = 350;
 
    creatmap();
 
-
-
-
+ 
 
   d3.json("test_gang.json", function(error,data) {
         gang = data;
-        
-       dropdownmenu();
+
+
+      
 });
 
 
@@ -48,35 +47,36 @@ function creatmap() {
     var g = svg.append('g')
     .attr("transform", "translate(" + margin.left*2 + "," + margin.top*2 + ")");
 
-    d3.json("test.json", function(collection) {
-        collection.objects.forEach(function(d) {
-            d.LatLng = new L.LatLng(d.circle.coordinates[0],
-                                    d.circle.coordinates[1])
-        })  
+    d3.json("geodata.json", function(error,collection) {
+      if(error){
+        console.log(error);
+      } else {
+
+        collection[0].features.forEach(function(d){
+            d.LatLng = new L.LatLng(d.geometry.coordinates[1],
+                                    d.geometry.coordinates[0])
+
+
+            var markerLocation = d.LatLng;
+            var color = {icon: orangeIcon};
+            if (d.properties.rating == "Level 3"){color = {icon: greyIcon};}
+            else if (d.properties.rating == "Level 2"){color = {icon: yellowIcon};}
+
+
+            var marker = new L.Marker(markerLocation,color).bindPopup("Name:"+d.properties.School_Name+"<br/>"
+              +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activeties: "+d.properties.Counts);
+            
+
+            map.addLayer(marker);
+
+
+          });
+
+        };
+
+    });
  
 
-    var feature = g.selectAll("circle")
-            .data(collection.objects)
-            .enter().append("circle")
-            .attr("class","circle")
-            .attr("r", 10);
-        
-    map.on("viewreset", update);
-        update();
-
-    function update() {
-        feature.attr("transform", 
-        function(d) { 
-            return "translate("+ 
-                map.latLngToLayerPoint(d.LatLng).x +","+ 
-                map.latLngToLayerPoint(d.LatLng).y +")";
-                }
-            )
-        }          
-});
-
-
-//attempt of another marker 
 var yellowIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -105,59 +105,62 @@ var greyIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
-  L.marker([41.87859028,-87.66419634], {icon: orangeIcon}).addTo(map).bindPopup("Name:Whitney M Young Magnet High School <br/>Level:1 <br/> Gang Activeties:24"); 
-  L.marker([41.92003613,-87.76108432], {icon: yellowIcon}).addTo(map).bindPopup("Name:Prosser Career Academy High School<br/>Level:2 <br/> Gang Activeties:592");
-  L.marker([41.88520477,-87.76321191], {icon: greyIcon}).addTo(map).bindPopup("Name:Austin Polytechnical Academy High School<br/>Level:3 <br/> Gang Activeties:1156");;
 
 
 };
 
+//function dropdownmenu() {
+
+//var svg = d3.select("#menu").append("svg")
+    //.attr("width", width + margin.left + margin.right)
+   // .attr("height", 5);
+
+//var select = d3.select('#menu')
+   // .append('select')
+   // .attr('class','select')
+   // .on('change',onchange)
+
+//var options = select
+  //.selectAll('option')
+ // .data(gang).enter()
+    //.append('option')
+   // .text(function (d) { return d.School_Name; });
+
+//function onchange() {
+   // selectValue = d3.select('select').property('value')
+   //d3.select('#menu')
+   // .append('h2')
+   // .text(selectValue + ' bar chart is on the way.')
+
+//};
 
 
-
-
-                  
-function dropdownmenu() {
-
-var svg = d3.select("#menu").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", 5);
-
-var select = d3.select('#menu')
-    .append('select')
-    .attr('class','select')
-    .on('change',onchange)
-
-
-
-var options = select
-  .selectAll('option')
-    .data(gang).enter()
-    .append('option')
-    .text(function (d) { return d.School_Name; });
-
-function onchange() {
-    selectValue = d3.select('select').property('value')
-    d3.select('#menu')
-    .append('h2')
-    .text(selectValue + ' bar chart is on the way.')
-
-};
-
-
-
+//}
+     
  
-  d3.json("test_gang_chart.json", function(error,data) {
+  d3.json("gang.json", function(error,data) {
         dataset = data;
-        
-          creatbar();
-        
-      
+
+
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+    var unique = dataset.filter( onlyUnique )
+ 
+ console.log(unique);
+
+
+  creatbar();  
+
+
   });
+
+  
+                  
 
  function  creatbar() {
 
-    var svg = d3.select("#bar")
+    var svg = d3.select("body")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom*6);
@@ -177,7 +180,7 @@ function onchange() {
 
  
 
-    g.append("g")
+    svg.append("g")
       .attr("class", "axis axis--x")
       .call(d3.axisTop(xScale))
       .selectAll("text")  
@@ -188,22 +191,63 @@ function onchange() {
                 return "rotate(65)" 
                 });
 
-    g.append("g")
+    svg.append("g")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(yScale));
 
 
-  g.selectAll(".bar")
+  svg.selectAll(".bar")
     .data(dataset)
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", function(d) { return xScale(d.Gang_Name); })
-    .attr("y", 0)
+    .attr("x", function(d) { return xScale(d.Gang_Name);})
+    .attr("y", function(d){
+      return yScale(+d[selection]);})
     .attr("width", xScale.bandwidth())
-    .attr("height", function(d) { return yScale(d.TOTAL); })
+    .attr("height", function(d) { return yScale(y(+d[selection]));}); 
 
+    var selector = d3.select("#menu")
+      .append("select")
+      .attr("id","dropdown")
+      .on("change", function(d){
+          selection = document.getElementById("dropdown");
 
+          y.domain([0, d3.max(dataset, function(d){
+        return +d[selection.value];})]);
+
+          d3.axisLeft(yScale).scale(yScale);
+
+          d3.selectAll(".rectangle")
+              .transition()
+              .attr("height", function(d){
+          return height - y(+d[selection.value]);
+        })
+        .attr("x", function(d, i){
+          return (width / data.length) * i ;
+        })
+        .attr("y", function(d){
+          return y(+d[selection.value]);
+        })
+              .ease("linear")
+             
+      
+            d3.selectAll("g.y.axis")
+              .transition()
+              .call(d3.axisLeft(yScale));
+
+         });
+
+    selector.selectAll("option")
+      .data(elements)
+      .enter().append("option")
+      .attr("value", function(d){
+        return d;
+      })
+      .text(function(d){
+        return d;
+      })
+ 
 
     g.append("text")
     .attr("class", "lableText")
@@ -220,15 +264,14 @@ function onchange() {
     .attr("dy", "-2.5em")
     .text("Counts");
 
-  
-
-
-
-
-};
+ 
 
 
 };
+
+
+
+//};
 
 
 

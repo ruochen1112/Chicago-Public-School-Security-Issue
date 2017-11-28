@@ -14,7 +14,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1156, 
-        "School Name": "Austin Business and Entrepreneurship Academy HS"
+        "School_Name": "Austin Business and Entrepreneurship Academy HS"
       }
     }, 
     {
@@ -29,7 +29,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1156, 
-        "School Name": "Michele Clark Academic Prep Magnet High School"
+        "School_Name": "Michele Clark Academic Prep Magnet High School"
       }
     }, 
     {
@@ -44,7 +44,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1156, 
-        "School Name": "Frederick A Douglass Academy High School"
+        "School_Name": "Frederick A Douglass Academy High School"
       }
     }, 
     {
@@ -59,7 +59,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1156, 
-        "School Name": "Austin Polytechnical Academy High School"
+        "School_Name": "Austin Polytechnical Academy High School"
       }
     }, 
     {
@@ -74,7 +74,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1156, 
-        "School Name": "VOISE Academy High School"
+        "School_Name": "VOISE Academy High School"
       }
     }, 
     {
@@ -89,7 +89,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 70, 
-        "School Name": "Chicago High School for the Arts"
+        "School_Name": "Chicago High School for the Arts"
       }
     }, 
     {
@@ -104,7 +104,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 70, 
-        "School Name": "Paul Laurence Dunbar Career Academy High School"
+        "School_Name": "Paul Laurence Dunbar Career Academy High School"
       }
     }, 
     {
@@ -119,7 +119,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 1026, 
-        "School Name": "Benito Juarez Community Academy High School"
+        "School_Name": "Benito Juarez Community Academy High School"
       }
     }, 
     {
@@ -134,7 +134,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1142, 
-        "School Name": "Chicago Vocational Career Academy High School"
+        "School_Name": "Chicago Vocational Career Academy High School"
       }
     }, 
     {
@@ -149,7 +149,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 1142, 
-        "School Name": "George Washington High School"
+        "School_Name": "George Washington High School"
       }
     }, 
     {
@@ -164,7 +164,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1142, 
-        "School Name": "Bowen High School"
+        "School_Name": "Bowen High School"
       }
     }, 
     {
@@ -179,7 +179,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 9, 
-        "School Name": "William Jones College Preparatory High School"
+        "School_Name": "William Jones College Preparatory High School"
       }
     }, 
     {
@@ -194,7 +194,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 592, 
-        "School Name": "Charles Allen Prosser Career Academy High School"
+        "School_Name": "Charles Allen Prosser Career Academy High School"
       }
     }, 
     {
@@ -209,7 +209,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 592, 
-        "School Name": "North-Grand High School"
+        "School_Name": "North-Grand High School"
       }
     }, 
     {
@@ -224,7 +224,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 592, 
-        "School Name": "Kelvyn Park High School"
+        "School_Name": "Kelvyn Park High School"
       }
     }, 
     {
@@ -239,7 +239,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 291, 
-        "School Name": "Walter Payton College Preparatory High School"
+        "School_Name": "Walter Payton College Preparatory High School"
       }
     }, 
     {
@@ -254,7 +254,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 1956, 
-        "School Name": "Ellen H Richards Career Academy High School"
+        "School_Name": "Ellen H Richards Career Academy High School"
       }
     }, 
     {
@@ -269,7 +269,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1956, 
-        "School Name": "Edward Tilden Career Community Academy HS"
+        "School_Name": "Edward Tilden Career Community Academy HS"
       }
     }, 
     {
@@ -284,7 +284,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 1956, 
-        "School Name": "Air Force Academy High School"
+        "School_Name": "Air Force Academy High School"
       }
     }, 
     {
@@ -299,7 +299,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 678, 
-        "School Name": "Neal F Simeon Career Academy High School"
+        "School_Name": "Neal F Simeon Career Academy High School"
       }
     }, 
     {
@@ -314,7 +314,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 1425, 
-        "School Name": "George Westinghouse High School"
+        "School_Name": "George Westinghouse High School"
       }
     }, 
     {
@@ -329,7 +329,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1425, 
-        "School Name": "John Marshall Metropolitan High School"
+        "School_Name": "John Marshall Metropolitan High School"
       }
     }, 
     {
@@ -344,7 +344,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1425, 
-        "School Name": "Al Raby High School"
+        "School_Name": "Al Raby High School"
       }
     }, 
     {
@@ -359,7 +359,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1425, 
-        "School Name": "Orr Academy High School"
+        "School_Name": "Orr Academy High School"
       }
     }, 
     {
@@ -374,7 +374,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 1226, 
-        "School Name": "John Hancock College Preparatory High School"
+        "School_Name": "John Hancock College Preparatory High School"
       }
     }, 
     {
@@ -389,7 +389,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 1226, 
-        "School Name": "Gage Park High School"
+        "School_Name": "Gage Park High School"
       }
     }, 
     {
@@ -404,7 +404,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1226, 
-        "School Name": "Gurdon S Hubbard High School"
+        "School_Name": "Gurdon S Hubbard High School"
       }
     }, 
     {
@@ -419,7 +419,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 233, 
-        "School Name": "Roald Amundsen High School"
+        "School_Name": "Roald Amundsen High School"
       }
     }, 
     {
@@ -434,7 +434,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 233, 
-        "School Name": "Theodore Roosevelt High School"
+        "School_Name": "Theodore Roosevelt High School"
       }
     }, 
     {
@@ -449,7 +449,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 233, 
-        "School Name": "Friedrich W Von Steuben Metropolitan Science HS"
+        "School_Name": "Friedrich W Von Steuben Metropolitan Science HS"
       }
     }, 
     {
@@ -464,7 +464,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 233, 
-        "School Name": "Northside College Preparatory High School"
+        "School_Name": "Northside College Preparatory High School"
       }
     }, 
     {
@@ -479,7 +479,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 110, 
-        "School Name": "William J Bogan High School"
+        "School_Name": "William J Bogan High School"
       }
     }, 
     {
@@ -494,7 +494,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 572, 
-        "School Name": "Richard T Crane Technical Preparatory HS"
+        "School_Name": "Richard T Crane Technical Preparatory HS"
       }
     }, 
     {
@@ -509,7 +509,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 572, 
-        "School Name": "Manley Career Academy High School"
+        "School_Name": "Manley Career Academy High School"
       }
     }, 
     {
@@ -524,7 +524,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 572, 
-        "School Name": "Phoenix Military Academy High School"
+        "School_Name": "Phoenix Military Academy High School"
       }
     }, 
     {
@@ -539,7 +539,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 572, 
-        "School Name": "Marine Military Math and Science Academy"
+        "School_Name": "Marine Military Math and Science Academy"
       }
     }, 
     {
@@ -554,7 +554,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 2011, 
-        "School Name": "David G Farragut Career Academy High School"
+        "School_Name": "David G Farragut Career Academy High School"
       }
     }, 
     {
@@ -569,7 +569,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 2011, 
-        "School Name": "Spry Community Links High School"
+        "School_Name": "Spry Community Links High School"
       }
     }, 
     {
@@ -584,7 +584,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 2011, 
-        "School Name": "Greater Lawndale High School For Social Justice"
+        "School_Name": "Greater Lawndale High School For Social Justice"
       }
     }, 
     {
@@ -599,7 +599,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 2011, 
-        "School Name": "Infinity Math Science and Technology High School"
+        "School_Name": "Infinity Math Science and Technology High School"
       }
     }, 
     {
@@ -614,7 +614,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 2011, 
-        "School Name": "Multicultural Academy of Scholarship"
+        "School_Name": "Multicultural Academy of Scholarship"
       }
     }, 
     {
@@ -629,7 +629,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 2011, 
-        "School Name": "World Language Academy High School"
+        "School_Name": "World Language Academy High School"
       }
     }, 
     {
@@ -644,7 +644,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 2011, 
-        "School Name": "Collins Academy High School"
+        "School_Name": "Collins Academy High School"
       }
     }, 
     {
@@ -659,7 +659,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 2011, 
-        "School Name": "Mason High School"
+        "School_Name": "Mason High School"
       }
     }, 
     {
@@ -674,7 +674,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 699, 
-        "School Name": "Christian Fenger Academy High School"
+        "School_Name": "Christian Fenger Academy High School"
       }
     }, 
     {
@@ -689,7 +689,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 699, 
-        "School Name": "John M Harlan Community Academy High School"
+        "School_Name": "John M Harlan Community Academy High School"
       }
     }, 
     {
@@ -704,7 +704,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 699, 
-        "School Name": "Gwendolyn Brooks College Preparatory Academy HS"
+        "School_Name": "Gwendolyn Brooks College Preparatory Academy HS"
       }
     }, 
     {
@@ -719,7 +719,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 699, 
-        "School Name": "George H Corliss High School"
+        "School_Name": "George H Corliss High School"
       }
     }, 
     {
@@ -734,7 +734,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 719, 
-        "School Name": "Paul Robeson High School"
+        "School_Name": "Paul Robeson High School"
       }
     }, 
     {
@@ -749,7 +749,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 719, 
-        "School Name": "Hope College Preparatory High School"
+        "School_Name": "Hope College Preparatory High School"
       }
     }, 
     {
@@ -764,7 +764,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 719, 
-        "School Name": "TEAM Englewood Community Academy High School"
+        "School_Name": "TEAM Englewood Community Academy High School"
       }
     }, 
     {
@@ -779,7 +779,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 157, 
-        "School Name": "Edwin G Foreman High School"
+        "School_Name": "Edwin G Foreman High School"
       }
     }, 
     {
@@ -794,7 +794,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 157, 
-        "School Name": "Carl Schurz High School"
+        "School_Name": "Carl Schurz High School"
       }
     }, 
     {
@@ -809,7 +809,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 760, 
-        "School Name": "William Rainey Harper High School"
+        "School_Name": "William Rainey Harper High School"
       }
     }, 
     {
@@ -824,7 +824,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 760, 
-        "School Name": "Robert Lindblom Math & Science Academy HS"
+        "School_Name": "Robert Lindblom Math & Science Academy HS"
       }
     }, 
     {
@@ -839,7 +839,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 673, 
-        "School Name": "Emil G Hirsch Metropolitan High School"
+        "School_Name": "Emil G Hirsch Metropolitan High School"
       }
     }, 
     {
@@ -854,7 +854,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 628, 
-        "School Name": "Hyde Park Academy High School"
+        "School_Name": "Hyde Park Academy High School"
       }
     }, 
     {
@@ -869,7 +869,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1055, 
-        "School Name": "Thomas Kelly High School"
+        "School_Name": "Thomas Kelly High School"
       }
     }, 
     {
@@ -884,7 +884,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 1055, 
-        "School Name": "Marie Sklodowska Curie Metropolitan High School"
+        "School_Name": "Marie Sklodowska Curie Metropolitan High School"
       }
     }, 
     {
@@ -899,7 +899,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 52, 
-        "School Name": "John F Kennedy High School"
+        "School_Name": "John F Kennedy High School"
       }
     }, 
     {
@@ -914,7 +914,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 47, 
-        "School Name": "Lake View High School"
+        "School_Name": "Lake View High School"
       }
     }, 
     {
@@ -929,7 +929,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 177, 
-        "School Name": "Albert G Lane Technical High School"
+        "School_Name": "Albert G Lane Technical High School"
       }
     }, 
     {
@@ -944,7 +944,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 177, 
-        "School Name": "DeVry University Advantage Academy HS"
+        "School_Name": "DeVry University Advantage Academy HS"
       }
     }, 
     {
@@ -959,7 +959,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 177, 
-        "School Name": "Alcott High School for the Humanities"
+        "School_Name": "Alcott High School for the Humanities"
       }
     }, 
     {
@@ -974,7 +974,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 271, 
-        "School Name": "Stephen T Mather High School"
+        "School_Name": "Stephen T Mather High School"
       }
     }, 
     {
@@ -989,7 +989,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 125, 
-        "School Name": "Morgan Park High School"
+        "School_Name": "Morgan Park High School"
       }
     }, 
     {
@@ -1004,7 +1004,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 125, 
-        "School Name": "Percy L Julian High School"
+        "School_Name": "Percy L Julian High School"
       }
     }, 
     {
@@ -1019,7 +1019,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 240, 
-        "School Name": "Wendell Phillips Academy High School"
+        "School_Name": "Wendell Phillips Academy High School"
       }
     }, 
     {
@@ -1034,7 +1034,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 240, 
-        "School Name": "Dr  Martin Luther King  Jr  College Prep HS"
+        "School_Name": "Dr  Martin Luther King  Jr  College Prep HS"
       }
     }, 
     {
@@ -1049,7 +1049,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 240, 
-        "School Name": "Chicago Military Academy High School"
+        "School_Name": "Chicago Military Academy High School"
       }
     }, 
     {
@@ -1064,7 +1064,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 109, 
-        "School Name": "Nicholas Senn High School"
+        "School_Name": "Nicholas Senn High School"
       }
     }, 
     {
@@ -1079,7 +1079,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 109, 
-        "School Name": "Hyman G Rickover Naval Academy High School"
+        "School_Name": "Hyman G Rickover Naval Academy High School"
       }
     }, 
     {
@@ -1094,7 +1094,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 59, 
-        "School Name": "Charles P Steinmetz College Preparatory HS"
+        "School_Name": "Charles P Steinmetz College Preparatory HS"
       }
     }, 
     {
@@ -1109,7 +1109,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 59, 
-        "School Name": "Chicago Academy High School"
+        "School_Name": "Chicago Academy High School"
       }
     }, 
     {
@@ -1124,7 +1124,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 593, 
-        "School Name": "Roger C Sullivan High School"
+        "School_Name": "Roger C Sullivan High School"
       }
     }, 
     {
@@ -1139,7 +1139,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 8, 
-        "School Name": "William Howard Taft High School"
+        "School_Name": "William Howard Taft High School"
       }
     }, 
     {
@@ -1154,7 +1154,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 187, 
-        "School Name": "Dyett High School"
+        "School_Name": "Dyett High School"
       }
     }, 
     {
@@ -1169,7 +1169,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 187, 
-        "School Name": "Kenwood Academy High School"
+        "School_Name": "Kenwood Academy High School"
       }
     }, 
     {
@@ -1184,7 +1184,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 187, 
-        "School Name": "Daniel Hale Williams Prep School of Medicine"
+        "School_Name": "Daniel Hale Williams Prep School of Medicine"
       }
     }, 
     {
@@ -1199,7 +1199,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 187, 
-        "School Name": "Bronzeville Scholastic Academy High School"
+        "School_Name": "Bronzeville Scholastic Academy High School"
       }
     }, 
     {
@@ -1214,7 +1214,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 40, 
-        "School Name": "Lincoln Park High School"
+        "School_Name": "Lincoln Park High School"
       }
     }, 
     {
@@ -1229,7 +1229,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 214, 
-        "School Name": "Wells Community Academy High School"
+        "School_Name": "Wells Community Academy High School"
       }
     }, 
     {
@@ -1244,7 +1244,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 214, 
-        "School Name": "Roberto Clemente Community Academy High School"
+        "School_Name": "Roberto Clemente Community Academy High School"
       }
     }, 
     {
@@ -1259,7 +1259,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 214, 
-        "School Name": "Ogden International High School"
+        "School_Name": "Ogden International High School"
       }
     }, 
     {
@@ -1274,7 +1274,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 4, 
-        "School Name": "Chicago High School for Agricultural Sciences"
+        "School_Name": "Chicago High School for Agricultural Sciences"
       }
     }, 
     {
@@ -1289,7 +1289,7 @@
       "properties": {
         "rating": "Level 1", 
         "Counts": 24, 
-        "School Name": "Whitney M Young Magnet High School"
+        "School_Name": "Whitney M Young Magnet High School"
       }
     }, 
     {
@@ -1304,7 +1304,7 @@
       "properties": {
         "rating": "Level 3", 
         "Counts": 513, 
-        "School Name": "High School of Leadership at South Shore"
+        "School_Name": "High School of Leadership at South Shore"
       }
     }, 
     {
@@ -1319,7 +1319,7 @@
       "properties": {
         "rating": "Level 2", 
         "Counts": 342, 
-        "School Name": "Uplift Community High School"
+        "School_Name": "Uplift Community High School"
       }
     }
   ]
