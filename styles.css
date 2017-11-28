@@ -10,23 +10,18 @@ h2 {
 	font-weight:100;
 	margin: .3em auto;
 			}
-.circle { stroke:#fffeb3; 
-           opacity:.8;
-           fill:#666547;}
 
-.circle:hover{fill:#ae0001;}
-
-.axis--x path {
+.axis path {
   display: none;
 }
 
-.axis--y path {
-  display: none;
+
+.rectangle {
+	fill:#abc6c3;
 }
-
-.bar {fill: #abc6c3}
-.bar:hover{fill:#ae0001;}
-
+.rectangle:hover {
+	fill:#ae0001;
+}
 .lableText {
 	font-family: sans-serif;
 

@@ -1,9 +1,10 @@
 
 
 
-var margin = {top: 30, right: 20, bottom: 57, left: 30}
+var margin = {top: 30, right: 20, bottom: 50, left: 30}
 var width = 900;
-var height = 350;
+var height = 300;
+var padding = -10; 
 
 
 
@@ -12,12 +13,6 @@ var height = 350;
 
  
 
-  d3.json("test_gang.json", function(error,data) {
-        gang = data;
-
-
-      
-});
 
 
   
@@ -44,8 +39,6 @@ function creatmap() {
     .attr("height", height + margin.top + margin.bottom*2);
 
 
-    var g = svg.append('g')
-    .attr("transform", "translate(" + margin.left*2 + "," + margin.top*2 + ")");
 
     d3.json("geodata.json", function(error,collection) {
       if(error){
@@ -109,45 +102,12 @@ var greyIcon = new L.Icon({
 
 };
 
-//function dropdownmenu() {
 
-//var svg = d3.select("#menu").append("svg")
-    //.attr("width", width + margin.left + margin.right)
-   // .attr("height", 5);
-
-//var select = d3.select('#menu')
-   // .append('select')
-   // .attr('class','select')
-   // .on('change',onchange)
-
-//var options = select
-  //.selectAll('option')
- // .data(gang).enter()
-    //.append('option')
-   // .text(function (d) { return d.School_Name; });
-
-//function onchange() {
-   // selectValue = d3.select('select').property('value')
-   //d3.select('#menu')
-   // .append('h2')
-   // .text(selectValue + ' bar chart is on the way.')
-
-//};
-
-
-//}
-     
  
-  d3.json("gang.json", function(error,data) {
-        dataset = data;
 
-
-function onlyUnique(value, index, self) { 
-    return self.indexOf(value) === index;
-}
-    var unique = dataset.filter( onlyUnique )
- 
- console.log(unique);
+d3.csv("gang.csv", function(error, data){
+    var input = data.filter(function(d){ return true;});
+    var tmp = data.filter(function(d){ return d["SchoolName"] == "Air Force Academy High School";});
 
 
   creatbar();  
@@ -160,86 +120,109 @@ function onlyUnique(value, index, self) {
 
  function  creatbar() {
 
-    var svg = d3.select("body")
-    .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom*6);
 
-  var g = svg.append('g')
-    .attr("transform", "translate(" + margin.left*2 + "," + margin.top*7 + ")")
-
-
-    var xScale = d3.scaleBand()
-    .domain(dataset.map(function(d) { return d.Gang_Name; }))
-    .rangeRound([0, width])
-    .padding(0.1);
-
-    var yScale = d3.scaleLinear()
-    .domain([0,d3.max(dataset, function(d) { return d.TOTAL; })])
-    .rangeRound([0,height])
-
+  var svg = d3.select("body")
+     .append("svg")
+     .attr("width", width + margin.left + margin.right)
+     .attr("height", height + margin.top + margin.bottom*4);
  
-
-    svg.append("g")
-      .attr("class", "axis axis--x")
-      .call(d3.axisTop(xScale))
-      .selectAll("text")  
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", ".15em")
-      .attr("transform", function(d) {
-                return "rotate(65)" 
-                });
-
-    svg.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(yScale));
+  var g = svg.append('g')
+     .attr("transform", "translate(" + margin.left*2+ "," + margin.top*6 + ")")
 
 
-  svg.selectAll(".bar")
-    .data(dataset)
+d3.csv("gang.csv", function(error, data){
+    var input = data.filter(function(d){ return true;});
+    var tmp = data.filter(function(d){ return d["SchoolName"] == "Air Force Academy High School";});
+
+  var y = d3.scale.linear()
+         .domain([0, d3.max(tmp, function(d){
+         return +d["TOTAL"];
+         })])
+         .range([0,height]);
+
+  var x = d3.scale.ordinal()
+      .domain(tmp.map(function(d){ return d.NAME;}))
+      .rangeBands([0, width]);
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("top");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");
+
+  g.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate("+padding+",0)")
+      .call(xAxis)
+      .selectAll("text")
+      .style("font-size", "11px")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", "-.15em")
+        .attr("transform", "rotate(90)" );
+
+
+  g.append("g")
+      .attr("class", "y axis")
+      .style("font-size", "12px")
+      .call(yAxis);
+
+  g.selectAll("rectangle")
+    .data(tmp)
     .enter()
     .append("rect")
-    .attr("class", "bar")
-    .attr("x", function(d) { return xScale(d.Gang_Name);})
-    .attr("y", function(d){
-      return yScale(+d[selection]);})
-    .attr("width", xScale.bandwidth())
-    .attr("height", function(d) { return yScale(y(+d[selection]));}); 
+    .attr("class","rectangle")
+    .attr("width", width / tmp.length)
+    .attr("height", function(d){
+      return y(+d["TOTAL"]);
+    })
+    .attr("x", function(d, i){
+      return (width / tmp.length) * i ;
+    })
+    .attr("y",0 );
 
-    var selector = d3.select("#menu")
+  var selector = d3.select("#drop")
       .append("select")
       .attr("id","dropdown")
       .on("change", function(d){
           selection = document.getElementById("dropdown");
+            var change = data.filter(function(d){ return d["SchoolName"] == selection.value;});
+            y.domain([0, d3.max(change, function(d){ return +d["TOTAL"]; })]).range([0,height]);;
+            console.log(change);
+            x.domain(change.map(function(d){ return d["NAME"]; })).rangeBands([0, width]);;
 
-          y.domain([0, d3.max(dataset, function(d){
-        return +d[selection.value];})]);
-
-          d3.axisLeft(yScale).scale(yScale);
-
+          yAxis.scale(y);
           d3.selectAll(".rectangle")
               .transition()
+              .attr("width", width / change.length)
               .attr("height", function(d){
-          return height - y(+d[selection.value]);
+          return y(+d["TOTAL"]);
         })
         .attr("x", function(d, i){
-          return (width / data.length) * i ;
+          return ( width / change.length) * i ;
         })
-        .attr("y", function(d){
-          return y(+d[selection.value]);
-        })
-              .ease("linear")
-             
+        .attr("y", 0);
       
             d3.selectAll("g.y.axis")
+              .style("font-size", "12px")
               .transition()
-              .call(d3.axisLeft(yScale));
+              .call(yAxis);
+            d3.selectAll("g.x.axis")
+              .transition()
+              .call(xAxis)
+              .selectAll("text")
+            .style("font-size", "11px")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", "-.15em")
+            .attr("transform", "rotate(90)");
 
          });
 
     selector.selectAll("option")
-      .data(elements)
+      .data(d3.map(input, function(d){return d["SchoolName"];}).keys())
       .enter().append("option")
       .attr("value", function(d){
         return d;
@@ -247,14 +230,13 @@ function onlyUnique(value, index, self) {
       .text(function(d){
         return d;
       })
- 
 
-    g.append("text")
-    .attr("class", "lableText")
-    .attr("dx", "28em")
-    .attr("dy", "-10em")            
-    .style("text-anchor", "middle")
-    .text("Active Gangs");
+//    g.append("text")
+  //  .attr("class", "lableText")
+ //   .attr("dx", "25em")
+   // .attr("dy", "-9em")            
+   // .style("text-anchor", "middle")
+    //.text("Active Gangs");
 
     g.append("text")
     .attr("class", "lableText")
@@ -263,15 +245,12 @@ function onlyUnique(value, index, self) {
     .attr("dx", "-10em")
     .attr("dy", "-2.5em")
     .text("Counts");
-
- 
-
-
+})
 };
 
 
 
-//};
+
 
 
 
