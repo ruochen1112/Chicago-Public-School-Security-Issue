@@ -35,7 +35,7 @@ function creatmap() {
 //   ext: 'png'
 // })
 
-    map._initPathRoot()  
+  
   
 
     // var svg = d3.select("#map")
