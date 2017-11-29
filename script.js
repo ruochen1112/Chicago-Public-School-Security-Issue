@@ -194,16 +194,36 @@ d3.csv("gang.csv", function(error, data){
             x.domain(change.map(function(d){ return d["NAME"]; })).rangeBands([0, width]);;
 
           yAxis.scale(y);
-          d3.selectAll(".rectangle")
-              .transition()
+          
+           g.selectAll(".rectangle")
+              .data(change, function(d) { return d.NAME})
+              .exit().remove()
+ 
+            g.selectAll(".rectangle")
+              .data(change, function(d) { return d.NAME})
+              .enter()
+              .append("rect")
+              .attr("class", "rectangle")
+              .attr("x", function(d, i){
+                return ( width / change.length) * i ;
+              })
+              .attr("y", 0)
               .attr("width", width / change.length)
+              .transition().duration(2000)
               .attr("height", function(d){
-          return y(+d["TOTAL"]);
-        })
-        .attr("x", function(d, i){
-          return ( width / change.length) * i ;
-        })
-        .attr("y", 0);
+                return y(+d["TOTAL"]);
+              });
+ 
+            g.selectAll(".rectangle")
+              .data(change, function(d) { return d.NAME})
+              .attr("x", function(d, i){
+                return ( width / change.length) * i ;
+              })
+              .attr("width", width / change.length)
+              .transition().duration(2000)
+              .attr("height", function(d){
+                return y(+d["TOTAL"]);
+              });
       
             d3.selectAll("g.y.axis")
               .style("font-size", "12px")
