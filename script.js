@@ -11,7 +11,6 @@ var padding = -10;
 
    creatmap();
 
- 
 
 
 
@@ -123,11 +122,12 @@ d3.csv("gang.csv", function(error, data){
 
   var svg = d3.select("body")
      .append("svg")
-     .attr("width", width + margin.left + margin.right)
+     .attr("width", width + margin.left + margin.right*6)
      .attr("height", height + margin.top + margin.bottom*4);
  
   var g = svg.append('g')
      .attr("transform", "translate(" + margin.left*2+ "," + margin.top*6 + ")")
+
 
 
 d3.csv("gang.csv", function(error, data){

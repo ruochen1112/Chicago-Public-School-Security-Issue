@@ -18,6 +18,7 @@ h2 {
 
 .rectangle {
 	fill:#abc6c3;
+	stroke: #eeeeee;
 }
 .rectangle:hover {
 	fill:#2b7c85;
