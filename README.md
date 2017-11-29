@@ -1,5 +1,5 @@
 
-##The Progress:
+**The Progress:**
 
 1. Made markers showing every public school in Chicago based on their geo info, while the color 
 are indicating the school rating(orange->level1, yellow->level2, gray -> level3), the
