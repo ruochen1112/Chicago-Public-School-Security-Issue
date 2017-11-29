@@ -27,6 +27,7 @@ function creatmap() {
 
 
 
+
 // L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
 //   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 //   subdomains: 'abcd',
@@ -36,12 +37,11 @@ function creatmap() {
 // })
 
   
-  
-
-    // var svg = d3.select("#map")
-    // .select("svg")
-    // .attr("width", width + margin.left + margin.right)
-    // .attr("height", height + margin.top + margin.bottom*2);
+    
+    var svg = d3.select("#map")
+    .select("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom*2);
 
     d3.json("geodata.json", function(error,collection) {
       if(error){
@@ -61,18 +61,16 @@ function creatmap() {
 
             var marker = new L.Marker(markerLocation,color).bindPopup("Name:"+d.properties.School_Name+"<br/>"
               +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activeties: "+d.properties.Counts);
-            
-
-
-       
-
+                
+           map.addLayer(marker);
 
           });
 
         };
 
     });
- 
+
+
 
 var yellowIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
