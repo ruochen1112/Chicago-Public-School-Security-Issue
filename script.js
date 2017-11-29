@@ -63,7 +63,6 @@ function creatmap() {
               +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activeties: "+d.properties.Counts);
             
 
-            map.addLayer(marker);
 
        
 
