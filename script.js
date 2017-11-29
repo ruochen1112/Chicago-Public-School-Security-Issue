@@ -2,10 +2,9 @@
 
 
 var margin = {top: 30, right: 20, bottom: 50, left: 30}
-var width = 900;
-var height = 300;
+var width = 1100;
+var height = 250;
 var padding = -10; 
-
 
 
 
@@ -21,23 +20,28 @@ function creatmap() {
 
 
     var map = L.map('map').setView([41.88, -87.63], 12);
-        mapLink = 
-            '<a href="https://openstreetmap.org">OpenStreetMap</a>';
-        L.tileLayer(
-            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; ' + mapLink + ' Contributors',
-            maxZoom: 18,
-            }).addTo(map);
+        mapLink = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+  maxZoom: 20,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+
+// L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+//   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+//   subdomains: 'abcd',
+//   minZoom: 0,
+//   maxZoom: 20,
+//   ext: 'png'
+// })
 
     map._initPathRoot()  
   
 
-    var svg = d3.select("#map")
-    .select("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom*2);
-
-
+    // var svg = d3.select("#map")
+    // .select("svg")
+    // .attr("width", width + margin.left + margin.right)
+    // .attr("height", height + margin.top + margin.bottom*2);
 
     d3.json("geodata.json", function(error,collection) {
       if(error){
@@ -60,6 +64,8 @@ function creatmap() {
             
 
             map.addLayer(marker);
+
+       
 
 
           });
@@ -120,13 +126,15 @@ d3.csv("gang.csv", function(error, data){
  function  creatbar() {
 
 
-  var svg = d3.select("body")
+  var svg = d3.select("#bar")
      .append("svg")
      .attr("width", width + margin.left + margin.right*6)
-     .attr("height", height + margin.top + margin.bottom*4);
+     .attr("height", height + margin.top + margin.bottom*5);
  
   var g = svg.append('g')
-     .attr("transform", "translate(" + margin.left*2+ "," + margin.top*6 + ")")
+     .attr("transform", "translate(" + margin.left*5+ "," + margin.top*6 + ")")
+
+  
 
 
 
@@ -157,7 +165,6 @@ d3.csv("gang.csv", function(error, data){
       .attr("transform", "translate("+padding+",0)")
       .call(xAxis)
       .selectAll("text")
-      .style("font-size", "11px")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", "-.15em")
@@ -166,7 +173,6 @@ d3.csv("gang.csv", function(error, data){
 
   g.append("g")
       .attr("class", "y axis")
-      .style("font-size", "12px")
       .call(yAxis);
 
   g.selectAll("rectangle")
@@ -226,18 +232,17 @@ d3.csv("gang.csv", function(error, data){
               });
       
             d3.selectAll("g.y.axis")
-              .style("font-size", "12px")
+            
               .transition()
               .call(yAxis);
             d3.selectAll("g.x.axis")
               .transition()
               .call(xAxis)
               .selectAll("text")
-            .style("font-size", "11px")
-            .style("text-anchor", "end")
-            .attr("dx", "-.8em")
-            .attr("dy", "-.15em")
-            .attr("transform", "rotate(90)");
+             .style("text-anchor", "end")
+             .attr("dx", "-.8em")
+             .attr("dy", "-.15em")
+             .attr("transform", "rotate(90)");
 
          });
 
@@ -261,8 +266,7 @@ d3.csv("gang.csv", function(error, data){
     g.append("text")
     .attr("class", "lableText")
     .attr("transform", "rotate(-90)")
-    .style("text-anchor", "middle")
-    .attr("dx", "-10em")
+    .attr("dx", "-8em")
     .attr("dy", "-2.5em")
     .text("Counts");
 })
