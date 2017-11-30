@@ -10,6 +10,7 @@ legend will add soon.
 4. Connected the drop down menu to the bar chart.
 5. Achieved the function when select a school, the bar chart will plot the specific gang
 activities data around that school.
+6. Added warp up background and edited on style and colors.
 
 
 
