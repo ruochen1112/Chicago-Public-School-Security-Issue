@@ -4,7 +4,7 @@
 
 
 body, html {
-    height: 41em;
+    height: 45em;
 }
 
 .bg { 
@@ -26,7 +26,7 @@ h1 {
 	color:#f1f1f1;
 	width: 1000px;
 	text-align: center;
-	padding: 35px 10px;
+	padding: 25px 10px;
 
 
 			}
@@ -37,18 +37,25 @@ h2 {
 	color:#f1f1f1;
 	margin: 0px auto 0;
 	text-align: center;
-
-
-			}
+  padding: 15px;
+}
 
 
 div#map {
-    width: 950px;
-    height:520px;
-    margin: 20px auto 0;
+    width: 660px;
+    float: left;
+    height: 520px;
+    margin: 30px;
     border: 3px solid rgba(88,109,139, 0.5);
-
+        
 }
+
+div#bar {
+    width: 200px;
+    float: left;
+    height: 300px;
+}
+
 
 .axis path {
   display: none;
@@ -62,7 +69,6 @@ div#map {
 
 
 }
-
 
 
 .rectangle {
@@ -86,9 +92,10 @@ p {font-family: serif;
 	font-style: italic;
 	color:#f1f1f1;
 	font-size: .6em;
-	font-weight:100;
     width: 1250px;
-    text-indent: 50px;
+    text-indent: 30px;
+    float: left;
+    padding: -10px;
 	 }
 
 

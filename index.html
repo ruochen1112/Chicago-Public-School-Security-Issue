@@ -37,39 +37,36 @@
   <h1>Chicago Public School Security Map</h1></div>
   <div class="subtitle">
   <h2 >The interactive map is showing the security level around Chicago public schools.
-  </br>By click the popup marker you can see the ratings and gang activities around each school.</h2>
+  </br>By click the popup marker you can see the ratings, gang activities counts and detailed gangs information around each school.</h2>
 
   </div>
 
-  <div id="map" ></div>
+  <div id="map" ></div> 
+  <div id="bar"></div>
+
 
  
-
+    <script src="https://d3js.org/d3.v3.min.js"></script>
   <script type="text/javascript" src="./script.js"></script>
+
+ <p>Data Source: <a href="https://home.chicagopolice.org/isr-data/" style="color: #f1f1f1"> Chicago Police Investigatory Stop Reports</a></p>
+ <p>Data Source: <a href="https://data.cityofchicago.org/Education/Chicago-Public-Schools-High-School-Progress-Report/qemx-3d9f/data" style="color: #f1f1f1"> Chicago Public Schools Progress Reports</a> 
+ 
+ <p><a href="https://github.com/ruochen1112/Interactive-DataViz-Project" style="color: #f1f1f1">My Code in Github</a></p></p>
+
 
 
  </div>
-<div class="bg">
-
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-
-
- <div id="bar">
-  <h1 >Active Gangs Around School Area</h1>
-  <h2 >By choose shcool name, you can see the most active gangs around the school.<br/> </h2>
-  <div id="drop" align=center style="width: 1400px; height: 40px"></div> </div>
-
-  <p>Data Source: <a href="https://home.chicagopolice.org/isr-data/" style="color: #f1f1f1"> Chicago Police Investigatory Stop Reports</a></p>
-  <p>Data Source: <a href="https://data.cityofchicago.org/Education/Chicago-Public-Schools-High-School-Progress-Report/qemx-3d9f/data" style="color: #f1f1f1"> Chicago Public Schools Progress Reports</a></p>
-  <p>Code Source for Bar Chart: <a href="http://bl.ocks.org/jonahwilliams/2f16643b999ada7b1909" style="color: #f1f1f1"> Code Source</a></p>
-  <p><a href="https://github.com/ruochen1112/Interactive-DataViz-Project" style="color: #f1f1f1">My Code in Github</a></p>
-
-</div>
 
 
 
-</body>
- 
+
+
+
+
+
+
+
 
 </html>
 

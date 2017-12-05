@@ -2,7 +2,7 @@
 
 
 var margin = {top: 30, right: 20, bottom: 50, left: 30}
-var width = 1100;
+var width = 580;
 var height = 250;
 var padding = -10; 
 var map;
@@ -270,11 +270,11 @@ d3.csv("gang.csv", function(error, data){
 
   var svg = d3.select("#bar")
      .append("svg")
-     .attr("width", width + margin.left + margin.right*6)
+     .attr("width", width + margin.left + margin.right)
      .attr("height", height + margin.top + margin.bottom*5);
  
   g = svg.append('g')
-     .attr("transform", "translate(" + margin.left*5+ "," + margin.top*6 + ")")
+     .attr("transform", "translate(" + margin.left*1+ "," + margin.top*8+ ")")
 
   
 
