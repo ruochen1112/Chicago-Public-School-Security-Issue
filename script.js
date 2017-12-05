@@ -15,19 +15,10 @@ var yAxis;
 
 
 
-
-
-
    creatmap();
 
 
-
-
-  
-
-
 function creatmap() {
-
 
     map = L.map('map',{zoomControl: false}).setView([41.88, -87.63], 12);
         mapLink = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -35,8 +26,7 @@ function creatmap() {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-
-  
+ 
     
     var svg = d3.select("#map")
     .select("svg")
@@ -60,7 +50,7 @@ function creatmap() {
 
 
             var marker = new L.Marker(markerLocation,color).bindPopup("Name:"+d.properties.School_Name+"<br/>"
-              +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activeties: "+d.properties.Counts);
+              +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activities: "+d.properties.Counts);
 
            marker.on('click', function(){
             d3.csv("gang.csv", function(error, data){
