@@ -2,8 +2,8 @@
 
 
 var margin = {top: 30, right: 20, bottom: 50, left: 30}
-var width = 580;
-var height = 250;
+var width = 600;
+var height = 300;
 var padding = -10; 
 var map;
 var g;
@@ -168,10 +168,11 @@ var greyIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
+// custom zoom bar control that includes a Zoom Home function
 var lat = 41.88;
 var lng = -87.63;
 var zoom = 12;
-// custom zoom bar control that includes a Zoom Home function
+
 L.Control.zoomHome = L.Control.extend({
     options: {
         position: 'topright',
@@ -179,7 +180,7 @@ L.Control.zoomHome = L.Control.extend({
         zoomInTitle: 'Zoom in',
         zoomOutText: '-',
         zoomOutTitle: 'Zoom out',
-        zoomHomeText: 'O',
+        zoomHomeText: 'o',
         zoomHomeTitle: 'Zoom home'
     },
 
@@ -274,7 +275,7 @@ d3.csv("gang.csv", function(error, data){
      .attr("height", height + margin.top + margin.bottom*5);
  
   g = svg.append('g')
-     .attr("transform", "translate(" + margin.left*1+ "," + margin.top*8+ ")")
+     .attr("transform", "translate(" + margin.left*1+ "," + margin.top*7+ ")")
 
   
 
@@ -329,12 +330,7 @@ d3.csv("gang.csv", function(error, data){
     })
     .attr("y",0 );
 
-    g.append("text")
-    .attr("class", "lableText")
-    .attr("transform", "rotate(-90)")
-    .attr("dx", "-8em")
-    .attr("dy", "-2.5em")
-    .text("Counts");
+
 })
 };
 

@@ -1,5 +1,5 @@
 
-**The Progress:**
+**The Progress for check in 2:**
 
 1. Made markers showing every public school in Chicago based on their geo info, while the color 
 are indicating the school rating(orange->level1, yellow->level2, gray -> level3), the
@@ -11,6 +11,15 @@ legend will add soon.
 5. Achieved the function when select a school, the bar chart will plot the specific gang
 activities data around that school.
 6. Added warp up background and edited on style and colors.
+
+**The Progress for check in 3:**
+1. Chained two chart together.
+2. Added "Home Key" to map which enabel to recenter the map by click the "o" butten between zoom in "-" and out "+".
+3. Added the legend for school rating level.
+4. Edited on the overall content and layout of two charts.
+
+
+
 
 
 
