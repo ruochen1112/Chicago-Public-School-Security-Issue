@@ -1,6 +1,4 @@
 
-
-
 var margin = {top: 30, right: 20, bottom: 50, left: 30}
 var width = 600;
 var height = 300;
@@ -48,77 +46,60 @@ function creatmap() {
             if (d.properties.rating == "Level 3"){color = {icon: greyIcon};}
             else if (d.properties.rating == "Level 2"){color = {icon: yellowIcon};}
 
+             var customPopup = "Name:"+d.properties.School_Name+"<br/>"
+              +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activities: "+d.properties.Counts;
+           var customOptions ={
+             'maxWidth': '500',
+            'className' : 'custom'
+           }
 
-            var marker = new L.Marker(markerLocation,color).bindPopup("Name:"+d.properties.School_Name+"<br/>"
-              +"Rating: "+d.properties.rating +"<br/>"+ "Gang Activities: "+d.properties.Counts);
+            var marker = new L.Marker(markerLocation,color).bindPopup(customPopup,customOptions);
 
            marker.on('click', function(){
             d3.csv("gang.csv", function(error, data){
 
            var school_name = d.properties.School_Name;
+           
 
-       var change = data.filter(function(d){ return d["SchoolName"] == school_name;});
+          var change = data.filter(function(d){ return d["SchoolName"] == school_name;});
+          console.log(change);
 
-       y = d3.scale.linear()
-             .domain([0, d3.max(change, function(d){
-             return +d["TOTAL"];
-             })])
-             .range([0,height]);
+            x.domain(change.map(function(d) { return d["NAME"]; }))
+            .rangeRound([0, width]);
 
-       x = d3.scale.ordinal()
-          .domain(change.map(function(d){ return d.NAME;}))
-          .rangeBands([0, width]);
 
-       xAxis = d3.svg.axis()
-          .scale(x)
-          .orient("top");
+            y.domain([0, d3.max(change, function(d){
+                 return +d["TOTAL"];
+                 })])
+            .rangeRound([0,height]);
 
-       yAxis = d3.svg.axis()
-          .scale(y)
-          .orient("left");
-          
-           g.selectAll(".rectangle")
-              .data(change, function(d) { return d.NAME})
-              .exit().remove()
- 
-            g.selectAll(".rectangle")
-              .data(change, function(d) { return d.NAME})
-              .enter()
+           var bars = g.selectAll(".rectangle")
+              .remove().exit().data(change, function(d) { return d.NAME});
+
+           bars.enter()
               .append("rect")
               .attr("class", "rectangle")
               .attr("x", function(d, i){
                 return ( width / change.length) * i ;
               })
-              .attr("y", 0)
-              .attr("width", width / change.length)
-              .transition().duration(2000)
-              .attr("height", function(d){
+             .attr("width", width / change.length)
+             .transition().duration(2000)
+             .attr("height", function(d){
                 return y(+d["TOTAL"]);
               });
- 
-            g.selectAll(".rectangle")
-              .data(change, function(d) { return d.NAME})
-              .attr("x", function(d, i){
-                return ( width / change.length) * i ;
-              })
-              .attr("width", width / change.length)
-              .transition().duration(2000)
-              .attr("height", function(d){
-                return y(+d["TOTAL"]);
-              });
-      
-            d3.selectAll("g.y.axis")
-            
+
+            d3.selectAll("g.y-axis")
               .transition()
               .call(yAxis);
-            d3.selectAll("g.x.axis")
+
+            d3.selectAll("g.x-axis")
               .transition()
               .call(xAxis)
               .selectAll("text")
-             .style("text-anchor", "end")
-             .attr("dx", "-.8em")
-             .attr("dy", "-.15em")
-             .attr("transform", "rotate(90)");
+              .style("text-anchor", "end")
+              .attr("dx", "-.8em")
+              .attr("dy", "1.3em")
+              .attr("transform", "rotate(90)" );
            });
            });
            map.addLayer(marker);
@@ -273,38 +254,35 @@ d3.csv("gang.csv", function(error, data){
     var input = data.filter(function(d){ return true;});
     var tmp = data.filter(function(d){ return d["SchoolName"] == "Air Force Academy High School";});
 
-   y = d3.scale.linear()
-         .domain([0, d3.max(tmp, function(d){
+
+
+    x = d3.scaleBand()
+    .domain(tmp.map(function(d) { return d.NAME; }))
+    .rangeRound([0, width]);
+
+    y = d3.scaleLinear()
+    .domain([0, d3.max(tmp, function(d){
          return +d["TOTAL"];
          })])
-         .range([0,height]);
+    .rangeRound([0,height]);
 
-   x = d3.scale.ordinal()
-      .domain(tmp.map(function(d){ return d.NAME;}))
-      .rangeBands([0, width]);
-
-   xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("top");
-
-   yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left");
-
-  g.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate("+padding+",0)")
+     xAxis = d3.axisTop(x);
+     yAxis = d3.axisLeft(y);
+  
+    g.append("g")
+      .attr("class", "x-axis")
       .call(xAxis)
       .selectAll("text")
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", "-.15em")
-        .attr("transform", "rotate(90)" );
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "1.5em")
+      .attr("transform", "rotate(90)" );
 
-
-  g.append("g")
-      .attr("class", "y axis")
+    g.append("g")
+      .attr("class", "y-axis")
       .call(yAxis);
+
+
 
   g.selectAll("rectangle")
     .data(tmp)
@@ -318,10 +296,9 @@ d3.csv("gang.csv", function(error, data){
     .attr("x", function(d, i){
       return (width / tmp.length) * i ;
     })
-    .attr("y",0 );
+    .attr("y", 0)
+        });
 
-
-})
 };
 
 

@@ -17,6 +17,8 @@ activities data around that school.
 2. Added "Home Key" to map which enabel to recenter the map by click the "o" butten between zoom in "-" and out "+".
 3. Added the legend for school rating level.
 4. Edited on the overall content and layout of two charts.
+5. Customized the popup markers color and made it suit to the content length.
+6. Updated the code from V3 to V4.
 
 
 
