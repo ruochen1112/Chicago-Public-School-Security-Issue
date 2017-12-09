@@ -62,7 +62,7 @@ function creatmap() {
            
 
           var change = data.filter(function(d){ return d["SchoolName"] == school_name;});
-          console.log(change);
+   
 
             x.domain(change.map(function(d) { return d["NAME"]; }))
             .rangeRound([0, width]);
