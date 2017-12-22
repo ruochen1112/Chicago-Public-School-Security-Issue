@@ -1,3 +1,5 @@
+Please check here for the visualization: https://ruochen1112.github.io/Interactive-Map-Chicago-Public-School-Security-Issue/
+
 
 **The Progress for check in 2:**
 
